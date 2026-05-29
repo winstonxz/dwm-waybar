@@ -1,0 +1,92 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 2,
+  "reload_style_on_change": true,
+  
+  "modules-left":   ["niri/workspaces", "niri/language"],
+  "modules-center": [],
+  "modules-right":  ["battery", "custom/separator", "cpu", "pulseaudio", "clock"],
+
+//======================================================================================
+
+  "pulseaudio": {
+    "scroll-step": 2, // %, can be a float
+    "format": "{icon}{volume}%",
+    "format-muted": "<span color=\"#b4befe\">Muted: </span>...",
+    "format-icons": {
+      "default": [
+        "<span> Vol: </span>"
+      ],
+      "headphone": [
+        "<span color=\"#89b4fa\">󰋋 </span>"
+      ]
+    },
+    "on-click": "pamixer -t"
+  },
+  
+  "niri/workspaces": {
+    "format": "{icon}",
+    "on-click": "niri msg action focus-workspace",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": false,
+    "active-only": true,
+    "show-special": true,
+    "format-icons": {},
+    "persistent-workspaces": [1, 2, 3, 4, 5]
+  },
+
+  "niri/language":{
+    "format": "[{short}]"
+  },
+  
+  "custom/separator": {
+    "format": "|",
+  },
+  
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "format": "{icon}  {capacity}%",
+    "format-icons": [""],
+  },
+
+  "custom/cpu": {
+    "format": "CPU: {}",
+    "interval": 2,
+    "escape": true,
+    "exec": "~/src/cpubarsRust/cpubars/src/rustnative",
+  },
+ 
+  "cpu": {
+    "interval": 2,
+    "format": "<span ><span color=\"#ea6962\"></span>CPU: {usage}%</span>",
+  },
+  
+  "clock": {
+    "format": "<span ><span color=\"#ea6962\"></span>{:%a %b %d %H:%M}</span>",
+    "timezones": ["Europe/Moscow"],
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#a6e3a1'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'>{}</span>",
+        "weeks": "<span color='#74c7ec'><b>W{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span background='#f38ba8' color='#1e1e2e'><b>{}</b></span>"
+      }
+    },
+    
+    "actions": {
+      "on-click": "tz_up",
+      "on-click-right": "tz_down",
+      "on-click-forward": "shift_up",
+      "on-click-backward": "shift_down",
+      "on-click-middle": "mode",
+    }
+  },
+}

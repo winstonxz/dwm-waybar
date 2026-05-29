@@ -1,0 +1,103 @@
+#backlight, #battery, #cpu, #disk, #idle_inhibitor, #keyboard-state,
+#pulseaudio, #clock, #tags, #language, #memory, #network, #sndio,
+#mode, #window, #workspaces, #temperature, #taskbar, #workspaces,
+#custom-treefetch-downloads, #custom-archupdates , #custom-axyl-downloads,
+#custom-gpu-temp, #custom-artix, #custom-cpubars, #custom-nettrf,
+#custom-showmode,#custom-nowplaying {
+  background: @background;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+#custom-separator {
+  color:#FFFFFF;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+#language {
+  min-width: 39px;
+}
+
+*{
+    font-family: "Zed Mono Nerd Font";
+    font-size: 14px;
+ }
+
+window#waybar { 
+  background-color: #007FC4; 
+  color: #FFFFFF;    
+  font-size: 14px;
+}
+
+
+.modules-left {
+  background-color: #000000; 
+  padding: 0px 0px 0px 0px;
+}
+
+
+.modules-right {
+  background-color: #000000; 
+  padding: 0px 5px 0px 0px;
+}
+
+#workspaces {
+  font-size: 14px;
+  border-radius: 0px;
+}
+
+
+#workspaces button {
+  font-size: 14px;
+  padding: 0px 8px 0px 8px; 
+  min-width: 1px;
+  border-radius: 0px;
+}
+
+#workspaces button.empty {
+  color: #FFFFFF;
+}
+
+#workspaces button.focused { 
+  font-size: 14px;
+  padding: 0px 8px 0px 8px; 
+  padding: 0px 8px 0px 8px; 
+  background-color: #007FC4;
+  color: #ff0000;    
+}
+
+#workspaces button.active {
+  font-size: 14px;
+  padding: 0px 8px 0px 8px; 
+  background-color: #007FC4; 
+  color: #ffffff;    
+}
+
+
+#custom-nowplaying,#window {
+  font-size: 14px;
+  color: #000000;    
+  background-color: #007FC4; 
+  padding: 0px 10px 0px 10px;
+}
+
+
+window#waybar.empty #window {
+  font-size: 14px;
+  background-color: transparent;
+  color: transparent;
+}
+
+
+window#waybar.empty {
+  font-size: 14px;
+  background-color: #000000; 
+}
+
+
+#cpu,#clock{
+  margin: 0px 8px 0px 8px;
+  background-color: #000000; 
+  color: #FFFFFF;    
+}
